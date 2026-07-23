@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TecAssist - Entrar</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/auth.css">
+</head>
+<body class="auth-body">
+
+  <div class="auth-wrapper">
+    <div class="auth-brand-panel">
+      <div class="auth-brand-content">
+        <div class="brand-logo">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+            <path d="M20 2L36 11V29L20 38L4 29V11L20 2Z" stroke="white" stroke-width="2.5" fill="rgba(255,255,255,0.1)"/>
+            <path d="M20 12L28 16.5V25.5L20 30L12 25.5V16.5L20 12Z" fill="white"/>
+          </svg>
+          <span>TecAssist</span>
+        </div>
+        <h1>Gerencie sua assistência técnica em um só lugar.</h1>
+        <p>Versão de testes — os dados ficam salvos no seu navegador (localStorage), sem precisar de servidor.</p>
+        <ul class="brand-features">
+          <li>Controle completo de ordens de serviço</li>
+          <li>Gestão de clientes e aparelhos</li>
+          <li>100% funcional para testes, sem instalar nada</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="auth-form-panel">
+      <div class="auth-form-box">
+
+        <div class="auth-tabs">
+          <button class="auth-tab active" data-tab="login">Entrar</button>
+          <button class="auth-tab" data-tab="registro">Criar conta</button>
+        </div>
+
+        <!-- ==================== FORM DE LOGIN ==================== -->
+        <form id="form-login" class="auth-form">
+          <h2>Bem-vindo de volta</h2>
+          <p class="auth-subtitle">Entre com sua conta para continuar.</p>
+
+          <div id="login-erro" class="auth-alert hidden"></div>
+
+          <label class="field-label">E-mail</label>
+          <input type="email" id="login-email" class="field-input" required value="carlos@tecassist.com">
+
+          <label class="field-label">Senha</label>
+          <input type="password" id="login-senha" class="field-input" required value="123456">
+
+          <button type="submit" class="btn-primary btn-full">Entrar</button>
+
+          <p class="auth-hint">Conta de teste já preenchida: <b>carlos@tecassist.com</b> / <b>123456</b></p>
+        </form>
+
+        <!-- ==================== FORM DE REGISTRO ==================== -->
+        <form id="form-registro" class="auth-form hidden">
+          <h2>Crie sua conta</h2>
+          <p class="auth-subtitle">Comece a usar o TecAssist (dados salvos localmente).</p>
+
+          <div id="registro-erro" class="auth-alert hidden"></div>
+
+          <label class="field-label">Nome da assistência técnica</label>
+          <input type="text" id="reg-empresa" class="field-input" placeholder="Ex: TecAssist Manutenção" required>
+
+          <label class="field-label">Seu nome</label>
+          <input type="text" id="reg-nome" class="field-input" placeholder="Seu nome completo" required>
+
+          <label class="field-label">E-mail</label>
+          <input type="email" id="reg-email" class="field-input" placeholder="seu@email.com" required>
+
+          <label class="field-label">Senha</label>
+          <input type="password" id="reg-senha" class="field-input" placeholder="Mínimo 6 caracteres" required minlength="6">
+
+          <button type="submit" class="btn-primary btn-full">Criar conta e entrar</button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ORDEM IMPORTA: db.js precisa carregar ANTES de auth.js, pois auth.js usa o objeto DB -->
+  <script src="js/db.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TecAssist</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<script src="js/db.js"></script>
+<script src="js/sidebar.js"></script>
+<script src="js/estoque.js"></script>
+<script>
+  const usuario = TecAssistLayout.montar("estoque");
+  if (usuario) {
+    document.getElementById("page-body").innerHTML = `
+      <h1 class="page-title">Módulo em construção</h1>
+      <p class="page-subtitle">Esta tela ainda será implementada na próxima etapa.</p>
+      <div class="card-panel">
+        <p style="color:var(--texto-secundario)">
+          O Dashboard, Login/Cadastro e Clientes já funcionam de verdade com o "banco fake" (localStorage).<br>
+          Use <b>clientes.js</b> como modelo para construir este módulo (<b>estoque</b>) do mesmo jeito.
+        </p>
+      </div>
+    `;
+  }
+</script>
+</body>
+</html>
